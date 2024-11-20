@@ -1,5 +1,4 @@
 export const Package: React.FC<React.ComponentPropsWithoutRef<"svg">> = ({
-  color,
   ...rest
 }) => (
   <svg

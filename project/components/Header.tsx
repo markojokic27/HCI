@@ -2,7 +2,7 @@
 
 // External packages
 import * as React from "react";
-import { Link, Button, Select } from "react-aria-components";
+import { Link, Button } from "react-aria-components";
 
 // Components
 import { Icon } from "@/components/Icon";
@@ -72,7 +72,7 @@ export const Header: React.FC<{
             </Link>
           </li>
           <li className="flex h-6 w-6 items-center md:hidden">
-            <HamburgerMenu headerTheme={headerTheme} />
+            <HamburgerMenu />
           </li>
         </ul>
       </div>
