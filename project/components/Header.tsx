@@ -67,7 +67,7 @@ export const Header: React.FC<{
             </Button>
           </li>
           <li>
-            <Link href="/my-orders" className="focus:outline-none">
+            <Link href="/cart" className="focus:outline-none">
               <Icon name="bag" />
             </Link>
           </li>
