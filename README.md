@@ -18,15 +18,15 @@
 
 ### Semester Project
 
-<!-- - Link to production version: [**Production Version**](URL_TO_PRODUCTION_VERSION) <!-- Replace with actual URL 
+<!-- - Link to production version: [**Production Version**](URL_TO_PRODUCTION_VERSION) <!-- Replace with actual URL
 - Link to final report: [**Final Report**](URL_TO_FINAL_REPORT) <!-- Replace with actual URL -->
 
-
 ### Semester Assignments
-- Link to Assignment 1: [**Figma video 1**](figma_video) <!-- Replace with actual URL -->
-- Link to Assignment 2: [**User personas and information architecture**](user-personas-and-information-architecture) <!-- Replace with actual URL --> 
-- Link to Assignment 3: [**Bizaca shop**](https://bizaca-shop-legjhry46-markojokic27s-projects.vercel.app/) <!-- Replace with actual URL -->
 
+- Link to Assignment 1: [**Figma video 1**](figma_video) <!-- Replace with actual URL -->
+- Link to Assignment 2: [**User personas and information architecture**](user-personas-and-information-architecture) <!-- Replace with actual URL -->
+- Link to Assignment 3: [**Bizaca shop**](https://bizaca-shop-legjhry46-markojokic27s-projects.vercel.app/) <!-- Replace with actual URL -->
+- Link to Assignment 4: [**High-fidelity prototype**](high-fidelity-prototype) <!-- Replace with actual URL -->
 
 ## Project Requirements
 
