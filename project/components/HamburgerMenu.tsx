@@ -36,13 +36,13 @@ export const HamburgerMenu: React.FC<
             </div>
             <ul className="m-8 flex flex-col gap-8 text-xl text-grayscale-10">
               <li>
-                <Link href={"/about"}>About</Link>
+                <Link href={"/pages/about"}>About</Link>
               </li>
               <li>
-                <Link href={"/models"}>Models</Link>
+                <Link href={"/pages/models"}>Models</Link>
               </li>
               <li>
-                <Link href={"/shop"}>Shop</Link>
+                <Link href={"/pages/products"}>Shop</Link>
               </li>
             </ul>
           </div>

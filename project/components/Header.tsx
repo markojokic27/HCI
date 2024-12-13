@@ -50,14 +50,14 @@ export const Header: React.FC<{
           Bizaca-logo
         </Link>
         <div className="hidden gap-8 md:flex">
-          <Link href="/about" className="self-center focus:outline-none">
+          <Link href="/pages/about" className="self-center focus:outline-none">
             About
           </Link>
-          <Link href="/models" className="self-center focus:outline-none">
+          <Link href="/pages/models" className="self-center focus:outline-none">
             Models
           </Link>
-          <Link href="/shop" className="self-center focus:outline-none">
-            Shop
+          <Link href="/pages/products" className="self-center focus:outline-none">
+            Products
           </Link>
         </div>
         <ul className="flex items-center gap-8 justify-self-end">
@@ -67,7 +67,7 @@ export const Header: React.FC<{
             </Button>
           </li>
           <li>
-            <Link href="/cart" className="focus:outline-none">
+            <Link href="/pages/cart" className="focus:outline-none">
               <Icon name="bag" />
             </Link>
           </li>

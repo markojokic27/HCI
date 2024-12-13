@@ -9,7 +9,7 @@ export default function Page() {
       <Layout className="mt-28">
         <LayoutRow>
           <LayoutColumn>
-            <h1 className="text-5xl text-center">Bizaca</h1>
+            <h1 className="text-5xl text-center">Bižaca</h1>
           </LayoutColumn>
         </LayoutRow>
       </Layout>
