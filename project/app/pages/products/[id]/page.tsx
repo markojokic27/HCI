@@ -5,13 +5,7 @@ import { Layout, LayoutRow, LayoutColumn } from "@/components/Layout";
 import { Header } from "@/components/Header";
 import { useEffect, useState } from 'react';
 
-// Define product type
-type Product = {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-};
+
 
 // Define comment type
 type Comment = {
