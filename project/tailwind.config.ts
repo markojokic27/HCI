@@ -44,6 +44,11 @@ const config: Config = {
         yellow: {
           400: "#FFEFB7",
         },
+        orange: {
+          25: "#FCF9F7",
+          200: "#F4EBE6",
+          800: "#C67D54",
+        },
       },
       fontSize: {
         "2xs": "12px",
@@ -75,6 +80,7 @@ const config: Config = {
       margin: {
         15: "3.75rem",
         18: "4.5rem",
+        21: "5.25rem",
         26: "6.5rem",
         34: "8.5rem",
       },
@@ -83,6 +89,30 @@ const config: Config = {
       },
       minWidth: {
         124: "31rem",
+      },
+      keyframes: {
+        hamburgerMenu: {
+          from: { transform: "translateX(100%)" },
+          to: { transform: "translateX(0)" },
+        },
+        hamburgerMenuOut: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(100%)" },
+        },
+        overlayShow: {
+          from: { opacity: "1" },
+          to: { opacity: "1" },
+        },
+        overlayHide: {
+          from: { opacity: "1" },
+          to: { opacity: "1" },
+        },
+      },
+      animation: {
+        hamburgerMenu: "hamburgerMenu 300ms ease-out",
+        hamburgerMenuOut: "hamburgerMenuOut 300ms ease-out",
+        overlayShow: "overlayShow 300ms ease-out",
+        overlayHide: "overlayHide 300ms ease-out",
       },
     },
   },

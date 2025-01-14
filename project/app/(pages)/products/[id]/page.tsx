@@ -2,7 +2,6 @@
 import { notFound } from 'next/navigation';
 import products from '../../../data/products.json'; // Import product data from JSON file
 import { Layout, LayoutRow, LayoutColumn } from "@/components/Layout";
-import { Header } from "@/components/Header";
 import { useEffect, useState } from 'react';
 
 
@@ -48,7 +47,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <Header headerTheme="dark" />
       <Layout className="mt-28">
         <LayoutRow>
           <LayoutColumn>

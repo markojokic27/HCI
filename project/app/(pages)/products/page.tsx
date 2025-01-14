@@ -2,12 +2,10 @@ import Link from 'next/link';
 import products from '../../data/products.json'; // Import product data from JSON file
 // Components
 import { Layout, LayoutRow, LayoutColumn } from "@/components/Layout";
-import { Header } from "@/components/Header";
 
 export default function Page() {
   return (
     <>
-      <Header headerTheme="dark" />
       <Layout className="mt-28">
         <LayoutRow>
           <LayoutColumn>

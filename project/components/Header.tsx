@@ -3,62 +3,57 @@
 // External packages
 import * as React from "react";
 import { Link, Button } from "react-aria-components";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 // Components
 import { Icon } from "@/components/Icon";
 import { HamburgerMenu } from "@/components/HamburgerMenu";
 
-export const Header: React.FC<{
-  headerTheme?: "light" | "dark";
-}> = ({ headerTheme = "dark" }) => {
+// Assets
+import Logo from "@/public/images/logo.png";
+
+export const Header = () => {
   const headerRef = React.useRef<HTMLDivElement | null>(null);
+  const pathName = usePathname();
 
-  React.useEffect(() => {
-    const element = headerRef.current;
-
-    if (element) {
-      element.dataset.theme = headerTheme;
-    }
-
-    const handleScroll = () => {
-      if (element && headerTheme === "light") {
-        const headerHeight = window.innerWidth < 768 ? 72 : 85;
-        if (window.scrollY > window.innerHeight - headerHeight) {
-          element.dataset.theme = "dark";
-        } else {
-          element.dataset.theme = "light";
-        }
-      }
-    };
-
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Models", href: "/models" },
+    { label: "Products", href: "/products" },
+  ];
 
   return (
     <div
       ref={headerRef}
-      className="group fixed top-0 z-40 mx-auto w-full border-b border-b-transparent bg-white data-[theme=dark]:border-b-white md:data-[theme=light]:bg-transparent"
+      className="group fixed top-0 z-40 mx-auto w-full border-b border-b-orange-800 bg-orange-25"
     >
-      <div className="mx-auto grid grid-cols-2 items-center px-8 py-6 sm:container md:grid-cols-[1fr_auto_1fr] md:px-6 md:py-7.5 md:group-data-[theme=light]:text-white">
+      <div className="mx-auto grid grid-cols-2 items-center px-6 py-2 sm:container md:grid-cols-[1fr_auto_1fr] md:px-6 md:py-4 md:group-data-[theme=light]:text-white">
         <Link
           href="/"
-          className="justify-self-start text-lg leading-none focus:outline-none"
+          className="leading-none justify-self-start focus:outline-none"
         >
-          Bizaca-logo
+          <Image
+            alt="logo"
+            src={Logo}
+            height={54}
+            width={120}
+            className="scale-75 -translate-x-4 md:scale-100 md:translate-x-0 "
+          />
         </Link>
-        <div className="hidden gap-8 md:flex">
-          <Link href="/pages/about" className="self-center focus:outline-none">
-            About
-          </Link>
-          <Link href="/pages/models" className="self-center focus:outline-none">
-            Models
-          </Link>
-          <Link href="/pages/products" className="self-center focus:outline-none">
-            Products
-          </Link>
+        <div className="hidden gap-8 md:flex uppercase font-medium">
+          {navLinks.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`self-center focus:outline-none ${
+                pathName === href ? "text-orange-800" : ""
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
         <ul className="flex items-center gap-8 justify-self-end">
           <li className="hidden items-center md:flex">

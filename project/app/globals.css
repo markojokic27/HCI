@@ -2,6 +2,53 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer components {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-libre-bodoni), serif;
+  }
+
+  /*
+   * Swiper
+   */
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none;
+    position: static;
+  }
+  div .swiper-button-prev,
+  div .swiper-button-next {
+    width: 40px;
+    display: none;
+    position: static;
+  }
+
+  @media (min-width: 640px) {
+    div .swiper-button-prev,
+    div .swiper-button-next {
+      display: block;
+      position: static;
+    }
+  }
+  div .swiper-button-prev.swiper-button-disabled,
+  div .swiper-button-next.swiper-button-disabled {
+    opacity: 1;
+  }
+  .custom-pagination {
+    font-family: var(--font-libre-bodoni), serif;
+  }
+
+  div .swiper-pagination-bullet-active {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: default;
+  }
+}
+
 @layer utilities {
   .w-column-1 {
     width: calc((1 / 12) * 100%);
