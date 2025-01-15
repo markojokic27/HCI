@@ -43,6 +43,7 @@ const config: Config = {
         },
         yellow: {
           400: "#FFEFB7",
+          800: "#fff0df",
         },
         orange: {
           25: "#FCF9F7",
@@ -75,7 +76,10 @@ const config: Config = {
         18: "4.5rem",
       },
       padding: {
+        2.5: "0.625rem",
         7.5: "1.875rem",
+        22: "5.5rem",
+        34: "8.5rem",
       },
       margin: {
         15: "3.75rem",

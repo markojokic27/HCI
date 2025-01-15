@@ -25,7 +25,7 @@ export const ImageSwiper: React.FC<
     },
   };
   return (
-    <div className="">
+    <div>
       <Swiper
         effect={"cube"}
         loop={true}
@@ -45,19 +45,19 @@ export const ImageSwiper: React.FC<
         {...rest}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="lg:px-20 xl:px-32 2xl:px-52">
+          <SwiperSlide key={index} className="lg:px-22">
             {slide}
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-center gap-10 items-center md:mt-14 h-10">
+      <div className="flex justify-center gap-10 items-center md:mt-10 md:h-10">
         <button className="swiper-button-prev group  hidden translate-y-3 transform sm:flex  ">
           <Arrow
             variant="left"
             className="group-disabled:bg-transparent group-disabled:text-orange-800"
           />
         </button>
-        <div className="custom-pagination  text-orange-800 flex justify-center gap-4 sm:gap-2 text-lg" />
+        <div className="custom-pagination leading-none  text-orange-800 flex justify-center gap-4 sm:gap-2 text-lg" />
         <button className="swiper-button-next group h-10 w-10 translate-y-3 ">
           <Arrow
             variant="left"

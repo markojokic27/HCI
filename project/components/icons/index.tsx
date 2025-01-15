@@ -24,6 +24,7 @@ import { Undo } from "./Undo";
 import { X } from "./X";
 import { Hamburger } from "./Hamburger";
 import { Checkbox } from "./Checkbox";
+import { Pen } from "./Pen";
 
 export {
   Bag,
@@ -51,5 +52,6 @@ export {
   Undo,
   X,
   Hamburger,
-  Checkbox
+  Checkbox,
+  Pen
 };

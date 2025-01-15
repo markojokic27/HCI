@@ -30,7 +30,8 @@ export type IconNames =
   | "undo"
   | "x"
   | "hamburger"
-  | "checkbox";
+  | "checkbox"
+  | "pen";
 
 const baseClasses = "w-6 h-6 flex-shrink-0";
 
@@ -129,6 +130,9 @@ export const Icon: React.FC<
     )}
     {name === "checkbox" && (
       <Icons.Checkbox {...rest} className={twMerge(baseClasses, className)} />
+    )}
+    {name === "pen" && (
+      <Icons.Pen {...rest} className={twMerge(baseClasses, className)} />
     )}
   </>
 );
