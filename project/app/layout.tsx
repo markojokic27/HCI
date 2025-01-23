@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Libre_Bodoni } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${libreBodoni.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -21,17 +21,18 @@ export type IconNames =
   | "trash"
   | "arrowUpRight"
   | "calendar"
-  | "truck"
+  | "instagram"
   | "mapPin"
   | "receipt"
   | "check"
-  | "package"
+  | "youtube"
   | "creditCard"
-  | "undo"
+  | "facebook"
   | "x"
   | "hamburger"
   | "checkbox"
-  | "pen";
+  | "pen"
+  | "quote";
 
 const baseClasses = "w-6 h-6 flex-shrink-0";
 
@@ -101,8 +102,8 @@ export const Icon: React.FC<
     {name === "calendar" && (
       <Icons.Calendar {...rest} className={twMerge(baseClasses, className)} />
     )}
-    {name === "truck" && (
-      <Icons.Truck {...rest} className={twMerge(baseClasses, className)} />
+    {name === "instagram" && (
+      <Icons.Instagram {...rest} className={twMerge(baseClasses, className)} />
     )}
     {name === "mapPin" && (
       <Icons.MapPin {...rest} className={twMerge(baseClasses, className)} />
@@ -113,14 +114,14 @@ export const Icon: React.FC<
     {name === "check" && (
       <Icons.Check {...rest} className={twMerge(baseClasses, className)} />
     )}
-    {name === "package" && (
-      <Icons.Package {...rest} className={twMerge(baseClasses, className)} />
+    {name === "youtube" && (
+      <Icons.YouTube {...rest} className={twMerge(baseClasses, className)} />
     )}
     {name === "creditCard" && (
       <Icons.CreditCard {...rest} className={twMerge(baseClasses, className)} />
     )}
-    {name === "undo" && (
-      <Icons.Undo {...rest} className={twMerge(baseClasses, className)} />
+    {name === "facebook" && (
+      <Icons.Facebook {...rest} className={twMerge(baseClasses, className)} />
     )}
     {name === "x" && (
       <Icons.X {...rest} className={twMerge(baseClasses, className)} />
@@ -133,6 +134,9 @@ export const Icon: React.FC<
     )}
     {name === "pen" && (
       <Icons.Pen {...rest} className={twMerge(baseClasses, className)} />
+    )}
+    {name === "quote" && (
+      <Icons.Quote {...rest} className={twMerge(baseClasses, className)} />
     )}
   </>
 );

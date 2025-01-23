@@ -50,7 +50,7 @@ export const ImageSwiper: React.FC<
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex justify-center gap-10 items-center md:mt-10 md:h-10">
+      <div className="flex justify-center gap-10 items-center md:mt-14 md:h-10">
         <button className="swiper-button-prev group  hidden translate-y-3 transform sm:flex  ">
           <Arrow
             variant="left"

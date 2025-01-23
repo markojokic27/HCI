@@ -14,7 +14,7 @@ export const HamburgerMenu: React.FC<
     </RadixDialog.Trigger>
     <RadixDialog.Overlay className="data-[state=closed]:animate-overlayShow data-[state=open]:animate-overlayHide">
       <RadixDialog.Content
-        className={`hamburger-menu fixed bottom-0 right-0 top-0 z-[70] min-w-[80%] bg-orange-800 data-[state=closed]:animate-hamburgerMenuOut data-[state=open]:animate-hamburgerMenu`}
+        className={`hamburger-menu border-l border-l-white fixed bottom-0 right-0 top-0 z-[70] min-w-[80%] bg-orange-800 data-[state=closed]:animate-hamburgerMenuOut data-[state=open]:animate-hamburgerMenu`}
       >
         <RadixDialog.Title />
         <RadixDialog.DialogDescription />

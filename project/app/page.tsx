@@ -46,7 +46,7 @@ export default function Page() {
   ];
   return (
     <>
-      <div className="mt-16 md:mt-21 bg-orange-200 max-h-screen  w-full py-10 2xl:py-32">
+      <div className="mt-16 md:mt-21 to-yellow-800 from-orange-25 bg-gradient-to-b max-h-screen  w-full py-14 2xl:py-32">
         <Layout>
           <LayoutRow>
             <LayoutColumn>
@@ -62,11 +62,11 @@ export default function Page() {
                       </h1>
                       <p className="md:text-md">{description}</p>
                     </div>
-                    <div className="rounded-xl min-[450px]:w-2/3 md:w-1/2 px-1 sm:px-0 mx-auto my-6 md:my-0">
+                    <div className="min-[450px]:w-2/3 md:w-1/2 px-1 sm:px-0 mx-auto my-6 md:my-0 overflow-hidden rounded-3xl">
                       <Image
                         alt={alt}
                         src={image}
-                        className="w-full aspect-square object-cover rounded-3xl"
+                        className="w-full aspect-square rounded-3xl  object-cover hover:scale-105 transition-transform duration-300"
                         priority={true}
                       />
                     </div>
@@ -78,7 +78,7 @@ export default function Page() {
         </Layout>
       </div>
       <Layout>
-        <LayoutRow className="py-12 lg:px-28 md:flex-row-reverse items-center">
+        <LayoutRow className="py-12 md:py-20 lg:px-28 md:flex-row-reverse items-center">
           <div className="md:px-8  mb-14 md:mb-0  flex flex-col justify-center md:w-1/2 ">
             <h1 className="text-lg lg:text-xl text-center mb-6 uppercase">
               Design your perfect wallet
@@ -99,19 +99,30 @@ export default function Page() {
               Create
             </Button>
           </div>
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 overflow-hidden rounded-3xl">
             <Image
               alt="wallet"
               src={Wallet1}
-              className="w-full aspect-square object-cover rounded-3xl"
+              className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-300"
               priority={true}
             />
           </div>
         </LayoutRow>
+        <LayoutRow>
+          <LayoutColumn
+            lgSpan={10}
+            lgOffset={1}
+            className=" p-10  bg-yellow-800 text-orange-800 flex justify-center font-semibold  text-xl italic relative   text-center rounded-3xl drop-shadow-lg"
+          >
+            <Icon name="quote" className="absolute top-6 left-6 scale-150" />
+            <h5>Don't lose this wallet, you won't get it back</h5>
+            <Icon
+              name="quote"
+              className="absolute bottom-6 right-6 scale-150 rotate-180"
+            />
+          </LayoutColumn>
+        </LayoutRow>
       </Layout>
-      <div className="h-screen bg-slate-300 flex justify-center text-white">
-        
-      </div>
     </>
   );
 }

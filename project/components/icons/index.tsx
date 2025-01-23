@@ -14,17 +14,18 @@ import { Info } from "./Info";
 import { ArrowUpRight } from "./ArrowUpRight";
 import { Trash } from "./Trash";
 import { Calendar } from "./Calendar";
-import { Truck } from "./Truck";
+import { Instagram } from "./Instagram";
 import { MapPin } from "./MapPin";
 import { Receipt } from "./Receipt";
 import { Check } from "./Check";
-import { Package } from "./Package";
+import { YouTube } from "./YouTube";
 import { CreditCard } from "./CreditCard";
-import { Undo } from "./Undo";
+import { Facebook } from "./Facebook";
 import { X } from "./X";
 import { Hamburger } from "./Hamburger";
 import { Checkbox } from "./Checkbox";
 import { Pen } from "./Pen";
+import { Quote } from "./Quote";
 
 export {
   Bag,
@@ -43,15 +44,16 @@ export {
   ArrowUpRight,
   Trash,
   Calendar,
-  Truck,
+  Instagram,
   MapPin,
   Receipt,
   Check,
-  Package,
+  YouTube,
   CreditCard,
-  Undo,
+  Facebook,
   X,
   Hamburger,
   Checkbox,
-  Pen
+  Pen,
+  Quote,
 };

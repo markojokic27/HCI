@@ -2,8 +2,9 @@
 
 // External packages
 import * as React from "react";
-import { Link, Button } from "react-aria-components";
+import { Button } from "react-aria-components";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 // Components
@@ -27,7 +28,7 @@ export const Header = () => {
   return (
     <div
       ref={headerRef}
-      className="group fixed top-0 z-40 mx-auto w-full border-b border-b-orange-800 bg-orange-25"
+      className="group fixed top-0 z-40 mx-auto w-full border-b md:border-b border-b-orange-800 bg-orange-25"
     >
       <div className="mx-auto grid grid-cols-2 items-center px-6 py-2 sm:container md:grid-cols-[1fr_auto_1fr] md:px-6 md:py-4 md:group-data-[theme=light]:text-white">
         <Link
