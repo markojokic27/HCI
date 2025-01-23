@@ -115,7 +115,7 @@ export default function Page() {
             className=" p-10  bg-yellow-800 text-orange-800 flex justify-center font-semibold  text-xl italic relative   text-center rounded-3xl drop-shadow-lg"
           >
             <Icon name="quote" className="absolute top-6 left-6 scale-150" />
-            <h5>Don't lose this wallet, you won't get it back</h5>
+            <h5>Don&apos;t lose this wallet, you won&apos;t get it back</h5>
             <Icon
               name="quote"
               className="absolute bottom-6 right-6 scale-150 rotate-180"
