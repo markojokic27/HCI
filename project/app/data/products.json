@@ -1,6 +1,0 @@
-[
-    { "id": 1, "name": "Wallet", "description": "Description of Product A", "price": 100 },
-    { "id": 2, "name": "Keychain", "description": "Description of Product B", "price": 200 },
-    { "id": 3, "name": "Purse", "description": "Description of Product C", "price": 300 }
-  ]
-  

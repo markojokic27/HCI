@@ -12,6 +12,10 @@
     font-family: var(--font-libre-bodoni), serif;
   }
 
+  .drawer {
+    width: calc(100% - 72px);
+  }
+
   /*
    * Swiper
    */

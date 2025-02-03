@@ -95,28 +95,58 @@ const config: Config = {
         124: "31rem",
       },
       keyframes: {
-        hamburgerMenu: {
-          from: { transform: "translateX(100%)" },
+        slideDownCollapsible: {
+          from: { height: "0" },
+          to: { height: "var(--radix-collapsible-content-height)" },
+        },
+        slideUpCollapsible: {
+          from: { height: "var(--radix-collapsible-content-height)" },
+          to: { height: "0" },
+        },
+        slideDownAccordion: {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        slideUpAccordion: {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        drawer: {
+          from: { transform: "translateX(-100%)" },
           to: { transform: "translateX(0)" },
         },
-        hamburgerMenuOut: {
+        drawerOut: {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(100%)" },
+          to: { transform: "translateX(-100%)" },
         },
-        overlayShow: {
-          from: { opacity: "1" },
+        popoverShow: {
+          from: { opacity: "0" },
           to: { opacity: "1" },
         },
-        overlayHide: {
+        popoverHide: {
           from: { opacity: "1" },
-          to: { opacity: "1" },
+          to: { opacity: "0" },
+        },
+        mobileFilterShow: {
+          from: { transform: "translateY(100%)" },
+          to: { transform: "translateY(0)" },
+        },
+        mobileFilterHide: {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(100%)" },
         },
       },
       animation: {
-        hamburgerMenu: "hamburgerMenu 300ms ease-out",
-        hamburgerMenuOut: "hamburgerMenuOut 300ms ease-out",
-        overlayShow: "overlayShow 300ms ease-out",
-        overlayHide: "overlayHide 300ms ease-out",
+        slideDownCollapsible: "slideDownCollapsible 300ms ease-out",
+        slideUpCollapsible: "slideUpCollapsible 300ms ease-out",
+        slideDownAccordion: "slideDownAccordion 300ms ease-out",
+        slideUpAccordion: "slideUpAccordion 300ms ease-out",
+        drawer: "drawer 300ms ease-out",
+        drawerOut: "drawerOut 300ms ease-out",
+        popoverShow: "popoverShow 300ms ease-out",
+        popoverHide: "popoverHide 300ms ease-out",
+        mobileFilterShow: "mobileFilterShow 300ms ease-out",
+        mobileFilterHide: "mobileFilterHide 300ms ease-out",
       },
     },
   },

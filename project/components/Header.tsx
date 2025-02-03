@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 // Components
 import { Icon } from "@/components/Icon";
-import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { Drawer } from "@/components/Drawer";
 
 // Assets
 import Logo from "@/public/images/logo.png";
@@ -68,7 +68,7 @@ export const Header = () => {
             </Link>
           </li>
           <li className="flex h-6 w-6 items-center md:hidden">
-            <HamburgerMenu />
+            <Drawer />
           </li>
         </ul>
       </div>
