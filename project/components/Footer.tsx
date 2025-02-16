@@ -15,13 +15,13 @@ export const Footer = () => {
             lgSpan={4}
             className="flex flex-col items-center sm:items-start"
           >
-            <Link href="/privacy-policy" className="w-fit">
+            <Link href="" className="w-fit">
               Privacy policy
             </Link>
-            <Link href="/cookie-policy" className="w-fit">
+            <Link href="" className="w-fit">
               Cookie policy
             </Link>
-            <Link href="/terms-of-use" className="w-fit">
+            <Link href="" className="w-fit">
               Terms od use
             </Link>
           </LayoutColumn>
@@ -57,8 +57,8 @@ export const Footer = () => {
             lgSpan={4}
           >
             <p>Peleteria Bizaca</p>
-            <p>Handcrafted Leather Goods | Made in Split, Croatia </p>
-            <p>© 2025 Pelleteria Bizaca. All rights reserved.</p>
+            <p>Made in Split, Croatia </p>
+            <p>© All rights reserved.</p>
           </LayoutColumn>
         </LayoutRow>
       </Layout>

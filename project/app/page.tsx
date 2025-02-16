@@ -1,5 +1,6 @@
 // External packages
 import Image from "next/image";
+import Link from "next/link";
 
 // Components
 import { Layout, LayoutRow, LayoutColumn } from "@/components/Layout";
@@ -9,9 +10,13 @@ import { Button } from "@/components/Button";
 // Assets
 import Palleteria from "@/public/images/palleteria.png";
 import Wallet1 from "@/public/images/wallet1.png";
-import Wallet2 from "@/public/images/wallet2.png";
+import Wallet2 from "@/public/images/walletsSea.png";
+import Wallet3 from "@/public/images/wallet5.png";
 import Leathers from "@/public/images/leathers.png";
 import { Icon } from "@/components/Icon";
+
+// Lib
+import getProducts from "@/lib/getProducts";
 
 export default function Page() {
   const slidesData = [
@@ -44,82 +49,125 @@ export default function Page() {
       alt: "leathers",
     },
   ];
+
+  const products = getProducts();
+  const selectedProducts = [
+    products[0],
+    products[3],
+    products[6],
+    products[14],
+  ];
+
   return (
     <>
-      <div className="mt-16 md:mt-21 to-yellow-800 from-orange-25 bg-gradient-to-b max-h-screen  w-full py-14 2xl:py-32">
+      <div className="mt-16 md:mt-21 to-yellow-800 from-orange-25 bg-gradient-to-b  w-full py-14">
         <Layout>
-          <LayoutRow>
-            <LayoutColumn>
-              <ImageSwiper
-                slides={slidesData.map(({ title, description, image, alt }) => (
-                  <div
-                    key={title}
-                    className="md:flex md:items-center min-h-full"
-                  >
-                    <div className="md:w-1/2 md:px-8 text-center flex flex-col justify-center">
-                      <h1 className="text-lg lg:text-xl mb-6 uppercase">
-                        {title}
-                      </h1>
-                      <p className="md:text-md">{description}</p>
-                    </div>
-                    <div className="min-[450px]:w-2/3 md:w-1/2 px-1 sm:px-0 mx-auto my-6 md:my-0 overflow-hidden rounded-3xl">
-                      <Image
-                        alt={alt}
-                        src={image}
-                        className="w-full aspect-square rounded-3xl  object-cover hover:scale-105 transition-transform duration-300"
-                        priority={true}
-                      />
-                    </div>
+          <ImageSwiper
+            slides={slidesData.map(({ title, description, image, alt }) => (
+              <LayoutRow
+                key={title}
+                className="md:flex md:items-center min-h-full"
+              >
+                <LayoutColumn mdSpan={6}>
+                  <div className="md:px-8 text-center flex flex-col justify-center">
+                    <h1 className="text-lg lg:text-xl mb-6 uppercase">
+                      {title}
+                    </h1>
+                    <p className="md:text-md">{description}</p>
                   </div>
-                ))}
-              />
-            </LayoutColumn>
-          </LayoutRow>
+                </LayoutColumn>
+                <LayoutColumn mdSpan={6}>
+                  <div className="px-1 sm:px-0 mx-auto my-6 md:my-0 overflow-hidden rounded-3xl">
+                    <Image
+                      alt={alt}
+                      src={image}
+                      className="w-full aspect-square rounded-3xl object-cover hover:scale-105 transition-transform duration-300"
+                      priority={true}
+                    />
+                  </div>
+                </LayoutColumn>
+              </LayoutRow>
+            ))}
+          />
         </Layout>
       </div>
       <Layout>
-        <LayoutRow className="py-12 md:py-20 lg:px-28 md:flex-row-reverse items-center">
-          <div className="md:px-8  mb-14 md:mb-0  flex flex-col justify-center md:w-1/2 ">
-            <h1 className="text-lg lg:text-xl text-center mb-6 uppercase">
-              Design your perfect wallet
+        <LayoutRow className="py-20 md:py-32 md:flex-row-reverse lg:items-center">
+          <LayoutColumn mdSpan={6}>
+            <div className="mb-14 md:mb-0  flex flex-col justify-center text-center">
+              <h1 className="text-lg lg:text-xl text-center mb-6 uppercase">
+                Design your perfect wallet
+              </h1>
+              <p className="md:text-md mb-6">
+                Experience the joy of crafting a wallet tailored to your style.
+                With our innovative 3D customization tool, you can: select your
+                favorite leather type and color, choose the stitching style and
+                thread color and add monograms or personal engravings for a
+                unique touch.
+              </p>
+
+              <Button
+                className="w-fit mx-auto py-4 text-orange-800"
+                iconLeft={<Icon name="pen" />}
+              >
+                Create
+              </Button>
+            </div>
+          </LayoutColumn>
+          <LayoutColumn mdSpan={6}>
+            <div className="overflow-hidden rounded-3xl">
+              <Image
+                alt="wallet"
+                src={Wallet3}
+                className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-300"
+                priority={true}
+              />
+            </div>
+          </LayoutColumn>
+        </LayoutRow>
+        <LayoutRow className="mb-20">
+          <LayoutColumn>
+            <h1 className="text-lg lg:text-xl mb-6 uppercase ">
+              Popular products
             </h1>
-            <p className="md:text-md">
-              Experience the joy of crafting a wallet tailored to your style.
-              With our innovative 3D customization tool, you can:
-            </p>
-            <ul className="list-disc pl-5 mb-4 md:text-md">
-              <li>select your favorite leather type and color</li>
-              <li>shoose the stitching style and thread color</li>
-              <li>add monograms or personal engravings for a unique touch</li>
-            </ul>
-            <Button
-              className="w-fit mx-auto py-4 text-orange-800"
-              iconLeft={<Icon name="pen" />}
+          </LayoutColumn>
+          {selectedProducts.map((product) => (
+            <LayoutColumn
+              key={product.id}
+              span={6}
+              lgSpan={3}
+              className="mb-6 "
             >
-              Create
-            </Button>
-          </div>
-          <div className="md:w-1/2 overflow-hidden rounded-3xl">
-            <Image
-              alt="wallet"
-              src={Wallet1}
-              className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-300"
-              priority={true}
-            />
-          </div>
+              <Link href={`/products/${product.id}`}>
+                <div className="p-2 rounded-3xl shadow-lg hover:scale-105 transition-transform hover:shadow-xl">
+                  <Image
+                    src={`/images/${product.image}`}
+                    alt={product.category}
+                    width={300}
+                    height={300}
+                    className="w-full object-cover rounded-2xl"
+                  />
+                  <h3 className="text-lg mt-2 font-semibold">
+                    {product.category}
+                  </h3>
+                  <p className="text-sm my-2 text-gray-500">
+                    {product.price} EUR
+                  </p>
+                </div>
+              </Link>
+            </LayoutColumn>
+          ))}
         </LayoutRow>
         <LayoutRow>
-          <LayoutColumn
-            lgSpan={10}
-            lgOffset={1}
-            className=" p-10  bg-yellow-800 text-orange-800 flex justify-center font-semibold  text-xl italic relative   text-center rounded-3xl drop-shadow-lg"
-          >
-            <Icon name="quote" className="absolute top-6 left-6 scale-150" />
-            <h5>Don&apos;t lose this wallet, you won&apos;t get it back</h5>
-            <Icon
-              name="quote"
-              className="absolute bottom-6 right-6 scale-150 rotate-180"
-            />
+          <LayoutColumn>
+            <div className="p-10 relative bg-yellow-800 text-orange-800 flex justify-center font-semibold  text-xl italic  text-center rounded-3xl drop-shadow-lg">
+              <Icon name="quote" className="absolute top-6 left-6 scale-150" />
+              <h5>Don&apos;t lose this wallet, you won&apos;t get it back</h5>
+              <Icon
+                name="quote"
+                className="absolute bottom-6 right-6 scale-150 rotate-180"
+              />
+            </div>
           </LayoutColumn>
         </LayoutRow>
       </Layout>

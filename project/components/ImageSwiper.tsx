@@ -45,7 +45,7 @@ export const ImageSwiper: React.FC<
         {...rest}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index} className="lg:px-22">
+          <SwiperSlide key={index} >
             {slide}
           </SwiperSlide>
         ))}
