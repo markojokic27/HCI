@@ -4,12 +4,18 @@ import Link from "next/link";
 // Componenets
 import { Layout, LayoutRow, LayoutColumn } from "@/components/Layout";
 import { Icon } from "@/components/Icon";
+import { twMerge } from "tailwind-merge";
 
-export const Footer = () => {
+export const Footer = ({ className }: { className?: string }) => {
   return (
-    <div className="w-full mt-12 py-10 md:mt-20 bg-orange-800">
+    <div
+      className={twMerge(
+        "mt-12 w-full bg-orange-800 py-10 md:mt-20",
+        className,
+      )}
+    >
       <Layout>
-        <LayoutRow className="text-white text-center sm:text-left">
+        <LayoutRow className="text-center text-white sm:text-left">
           <LayoutColumn
             smSpan={6}
             lgSpan={4}
@@ -28,10 +34,10 @@ export const Footer = () => {
           <LayoutColumn
             smSpan={6}
             lgSpan={4}
-            className="sm:text-right my-4 sm:my-0 lg:text-center"
+            className="my-4 sm:my-0 sm:text-right lg:text-center"
           >
             <p>Follow us on social media</p>
-            <div className="flex gap-4 justify-center sm:justify-end lg:justify-center mt-2">
+            <div className="mt-2 flex justify-center gap-4 sm:justify-end lg:justify-center">
               <Link
                 href={"https://www.instagram.com/pelletteriabizaca/"}
                 target="_blank"
@@ -53,7 +59,7 @@ export const Footer = () => {
             </div>
           </LayoutColumn>
           <LayoutColumn
-            className="mt-4 sm:text-center lg:text-right lg:mt-0"
+            className="mt-4 sm:text-center lg:mt-0 lg:text-right"
             lgSpan={4}
           >
             <p>Peleteria Bizaca</p>

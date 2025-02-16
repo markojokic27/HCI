@@ -19,7 +19,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               alt={product?.category || ""}
               width={300}
               height={300}
-              className="w-full  aspect-square rounded-3xl object-cover hover:scale-105 transition-transform duration-300"
+              className="aspect-square w-full rounded-3xl object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
         </LayoutColumn>
@@ -28,19 +28,19 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           className="md:flex md:flex-col md:justify-between"
         >
           <div>
-            <h3 className="text-lg md:text-xl my-4 lg:my-10">
+            <h3 className="my-4 text-lg md:text-xl lg:my-10">
               {product?.name}
             </h3>
             <p className="text-orange-800">Description</p>
             <p className="mb-4 lg:text-md">{product?.description}</p>
-            <p className="text-orange-800 hidden lg:block">Category</p>
-            <p className="mb-4 lg:text-md hidden lg:block">
+            <p className="hidden text-orange-800 lg:block">Category</p>
+            <p className="mb-4 hidden lg:block lg:text-md">
               {product?.category}
             </p>
             <p className="text-orange-800">Price</p>
             <p className="mb-4 lg:text-md">{product?.price} EUR</p>
           </div>
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col gap-4 md:flex-row">
             <Counter />
             <Button className="w-full">Add to cart</Button>
           </div>

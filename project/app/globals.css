@@ -51,6 +51,9 @@
     text-underline-offset: 2px;
     cursor: default;
   }
+  .empty-height {
+    height: calc(100vh - 232px);
+  }
 }
 
 @layer utilities {

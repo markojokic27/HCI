@@ -60,28 +60,28 @@ export default function Page() {
 
   return (
     <>
-      <div className="mt-16 md:mt-21 to-yellow-800 from-orange-25 bg-gradient-to-b  w-full py-14">
+      <div className="mt-16 w-full bg-gradient-to-b from-orange-25 to-yellow-800 py-14 md:mt-21">
         <Layout>
           <ImageSwiper
             slides={slidesData.map(({ title, description, image, alt }) => (
               <LayoutRow
                 key={title}
-                className="md:flex md:items-center min-h-full"
+                className="min-h-full md:flex md:items-center"
               >
                 <LayoutColumn mdSpan={6}>
-                  <div className="md:px-8 text-center flex flex-col justify-center">
-                    <h1 className="text-lg lg:text-xl mb-6 uppercase">
+                  <div className="flex flex-col justify-center text-center md:px-8">
+                    <h1 className="mb-6 text-lg uppercase lg:text-xl">
                       {title}
                     </h1>
                     <p className="md:text-md">{description}</p>
                   </div>
                 </LayoutColumn>
                 <LayoutColumn mdSpan={6}>
-                  <div className="px-1 sm:px-0 mx-auto my-6 md:my-0 overflow-hidden rounded-3xl">
+                  <div className="mx-auto my-6 overflow-hidden rounded-3xl px-1 sm:px-0 md:my-0">
                     <Image
                       alt={alt}
                       src={image}
-                      className="w-full aspect-square rounded-3xl object-cover hover:scale-105 transition-transform duration-300"
+                      className="aspect-square w-full rounded-3xl object-cover transition-transform duration-300 hover:scale-105"
                       priority={true}
                     />
                   </div>
@@ -92,13 +92,13 @@ export default function Page() {
         </Layout>
       </div>
       <Layout>
-        <LayoutRow className="py-20 md:py-32 md:flex-row-reverse lg:items-center">
+        <LayoutRow className="py-20 md:flex-row-reverse md:py-32 lg:items-center">
           <LayoutColumn mdSpan={6}>
-            <div className="mb-14 md:mb-0  flex flex-col justify-center text-center">
-              <h1 className="text-lg lg:text-xl text-center mb-6 uppercase">
+            <div className="mb-14 flex flex-col justify-center text-center md:mb-0">
+              <h1 className="mb-6 text-center text-lg uppercase lg:text-xl">
                 Design your perfect wallet
               </h1>
-              <p className="md:text-md mb-6">
+              <p className="mb-6 md:text-md">
                 Experience the joy of crafting a wallet tailored to your style.
                 With our innovative 3D customization tool, you can: select your
                 favorite leather type and color, choose the stitching style and
@@ -107,7 +107,7 @@ export default function Page() {
               </p>
 
               <Button
-                className="w-fit mx-auto py-4 text-orange-800"
+                className="mx-auto w-fit py-4 text-orange-800"
                 iconLeft={<Icon name="pen" />}
               >
                 Create
@@ -119,7 +119,7 @@ export default function Page() {
               <Image
                 alt="wallet"
                 src={Wallet3}
-                className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-300"
+                className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
                 priority={true}
               />
             </div>
@@ -127,30 +127,25 @@ export default function Page() {
         </LayoutRow>
         <LayoutRow className="mb-20">
           <LayoutColumn>
-            <h1 className="text-lg lg:text-xl mb-6 uppercase ">
+            <h1 className="mb-6 text-lg uppercase lg:text-xl">
               Popular products
             </h1>
           </LayoutColumn>
           {selectedProducts.map((product) => (
-            <LayoutColumn
-              key={product.id}
-              span={6}
-              lgSpan={3}
-              className="mb-6 "
-            >
+            <LayoutColumn key={product.id} span={6} lgSpan={3} className="mb-6">
               <Link href={`/products/${product.id}`}>
-                <div className="p-2 rounded-3xl shadow-lg hover:scale-105 transition-transform hover:shadow-xl">
+                <div className="rounded-3xl p-2 shadow-lg transition-transform hover:scale-105 hover:shadow-xl">
                   <Image
                     src={`/images/${product.image}`}
                     alt={product.category}
                     width={300}
                     height={300}
-                    className="w-full object-cover rounded-2xl"
+                    className="w-full rounded-2xl object-cover"
                   />
-                  <h3 className="text-lg mt-2 font-semibold">
+                  <h3 className="mt-2 text-lg font-semibold">
                     {product.category}
                   </h3>
-                  <p className="text-sm my-2 text-gray-500">
+                  <p className="my-2 text-sm text-gray-500">
                     {product.price} EUR
                   </p>
                 </div>
@@ -160,12 +155,12 @@ export default function Page() {
         </LayoutRow>
         <LayoutRow>
           <LayoutColumn>
-            <div className="p-10 relative bg-yellow-800 text-orange-800 flex justify-center font-semibold  text-xl italic  text-center rounded-3xl drop-shadow-lg">
-              <Icon name="quote" className="absolute top-6 left-6 scale-150" />
+            <div className="relative flex justify-center rounded-3xl bg-yellow-800 p-10 text-center text-xl font-semibold italic text-orange-800 drop-shadow-lg">
+              <Icon name="quote" className="absolute left-6 top-6 scale-150" />
               <h5>Don&apos;t lose this wallet, you won&apos;t get it back</h5>
               <Icon
                 name="quote"
-                className="absolute bottom-6 right-6 scale-150 rotate-180"
+                className="absolute bottom-6 right-6 rotate-180 scale-150"
               />
             </div>
           </LayoutColumn>
