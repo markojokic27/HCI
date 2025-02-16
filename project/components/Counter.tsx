@@ -15,10 +15,11 @@ import {
 import { Icon } from "@/components/Icon";
 
 export const Counter: React.FC<
-  NumberFieldProps & { variant?: "default" | "small" }
-> = ({ className, variant, ...rest }) => {
-  const [value, setValue] = React.useState<number>(1);
-
+  NumberFieldProps & {
+    variant?: "default" | "small";
+    setValue: (value: number) => void;
+  }
+> = ({ className, variant, value, setValue, ...rest }) => {
   return (
     <NumberField
       value={value}
@@ -32,7 +33,7 @@ export const Counter: React.FC<
       <Group
         className={twMerge(
           "flex items-center justify-between rounded-xl border border-orange-800 px-6 py-3",
-          variant === "small" ? "w-22 px-3 py-1.75" : "md:w-40"
+          variant === "small" ? "w-22 py-1.75 px-3" : "md:w-40",
         )}
       >
         <Button
@@ -45,7 +46,7 @@ export const Counter: React.FC<
           inputMode="numeric"
           className={twMerge(
             "h-5 w-5 text-center outline-none",
-            variant === "small" ? "h-4 w-4 text-2xs" : ""
+            variant === "small" ? "h-4 w-4 text-2xs" : "",
           )}
         />
         <Button

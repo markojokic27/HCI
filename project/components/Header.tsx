@@ -28,22 +28,22 @@ export const Header = () => {
   return (
     <div
       ref={headerRef}
-      className="group fixed top-0 z-40 mx-auto w-full border-b md:border-b border-b-orange-800 bg-orange-25"
+      className="group fixed top-0 z-40 mx-auto w-full border-b border-b-orange-800 bg-orange-25 md:border-b"
     >
       <div className="mx-auto grid grid-cols-2 items-center px-6 py-2 sm:container md:grid-cols-[1fr_auto_1fr] md:px-6 md:py-4 md:group-data-[theme=light]:text-white">
         <Link
           href="/"
-          className="leading-none justify-self-start focus:outline-none"
+          className="justify-self-start leading-none focus:outline-none"
         >
           <Image
             alt="logo"
             src={Logo}
             height={54}
             width={120}
-            className="scale-75 -translate-x-4 md:scale-100 md:translate-x-0 "
+            className="-translate-x-4 scale-75 md:translate-x-0 md:scale-100"
           />
         </Link>
-        <div className="hidden gap-8 md:flex uppercase font-medium">
+        <div className="hidden gap-8 font-medium uppercase md:flex">
           {navLinks.map(({ label, href }) => (
             <Link
               key={href}
@@ -63,8 +63,9 @@ export const Header = () => {
             </Button>
           </li>
           <li>
-            <Link href="/pages/cart" className="focus:outline-none">
+            <Link href="/pages/cart" className="relative focus:outline-none">
               <Icon name="bag" />
+              <div className="absolute left-2.5 top-1 text-2xs">1</div>
             </Link>
           </li>
           <li className="flex h-6 w-6 items-center md:hidden">

@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+import CartProvider from "@/app/cart-provider";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -28,11 +30,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${libreBodoni.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <CartProvider>
+        <body
+          className={`${inter.variable} ${libreBodoni.variable} antialiased`}
+        >
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </CartProvider>
     </html>
   );
 }
