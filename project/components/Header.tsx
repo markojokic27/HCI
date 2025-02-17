@@ -22,7 +22,6 @@ export const Header = () => {
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
     { label: "Models", href: "/models" },
-    { label: "About", href: "/about" },
   ];
 
   return (

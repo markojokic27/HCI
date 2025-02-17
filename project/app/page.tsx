@@ -105,13 +105,14 @@ export default function Page() {
                 thread color and add monograms or personal engravings for a
                 unique touch.
               </p>
-
-              <Button
-                className="mx-auto w-fit py-4 text-orange-800"
-                iconLeft={<Icon name="pen" />}
-              >
-                Create
-              </Button>
+              <Link href={"/models"}>
+                <Button
+                  className="mx-auto w-fit py-4 text-orange-800"
+                  iconLeft={<Icon name="pen" />}
+                >
+                  Create
+                </Button>
+              </Link>
             </div>
           </LayoutColumn>
           <LayoutColumn mdSpan={6}>

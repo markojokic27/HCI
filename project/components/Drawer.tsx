@@ -27,11 +27,11 @@ export const Drawer: React.FC<
           isDismissable
           isOpen={isOpen}
           onOpenChange={setIsOpen}
-          className="data-[entering]:animate-drawer data-[exiting]:animate-drawerOut fixed bottom-0 left-0 top-0 z-[70] w-full"
+          className="fixed bottom-0 left-0 top-0 z-[70] w-full data-[entering]:animate-drawer data-[exiting]:animate-drawerOut"
         >
           <Modal className="drawer fixed bottom-0 left-0 top-0 z-[70] border-r border-r-white bg-orange-800">
             <Dialog className="flex h-full flex-col justify-between outline-none">
-              <div className="flex flex-col h-full relative">
+              <div className="relative flex h-full flex-col">
                 <div className="flex h-[70px] w-full items-center justify-end border-b border-b-white px-8 text-white">
                   <Button
                     onPress={() => setIsOpen(false)}
@@ -47,8 +47,8 @@ export const Drawer: React.FC<
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/about"} onClick={() => setIsOpen(false)}>
-                      About
+                    <Link href={"/products"} onClick={() => setIsOpen(false)}>
+                      Products
                     </Link>
                   </li>
                   <li>
@@ -56,15 +56,10 @@ export const Drawer: React.FC<
                       Models
                     </Link>
                   </li>
-                  <li>
-                    <Link href={"/products"} onClick={() => setIsOpen(false)}>
-                      Products
-                    </Link>
-                  </li>
                 </ul>
-                <div className="text-white absolute bottom-0 text-center left-1/2 -translate-x-1/2">
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center text-white">
                   <p>Follow us on social media</p>
-                  <div className="flex gap-4 justify-center sm:justify-end lg:justify-center mt-2">
+                  <div className="mt-2 flex justify-center gap-4 sm:justify-end lg:justify-center">
                     <Link
                       href={"https://www.instagram.com/pelletteriabizaca/"}
                       target="_blank"
