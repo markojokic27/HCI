@@ -8,6 +8,11 @@ import { Layout, LayoutRow, LayoutColumn } from "@/components/Layout";
 import { Accordion } from "radix-ui";
 import { Icon } from "@/components/Icon";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+// ✅ Disable SSR for this component
+const CustomItemPage = dynamic(() => Promise.resolve(PageComponent), {
+  ssr: false,
+});
 
 type ModelProps = {
   scene: THREE.Object3D;
@@ -17,11 +22,9 @@ const Model = ({ scene }: ModelProps) => {
   return <primitive object={scene} />;
 };
 
-const CustomItemPage = () => {
-  const { scene } = useGLTF("/model/walletFinal.glb");
-  React.useEffect(() => {
-    scene.rotation.y -= Math.PI / 5;
-  }, [scene]);
+const PageComponent = () => {
+  const { scene } = useGLTF("/walletFinal.glb"); // ✅ Ensure this is inside `public/`
+
   return (
     <Layout className="py-20 lg:py-32">
       <LayoutRow>
@@ -80,6 +83,8 @@ const CustomItemPage = () => {
                               }
                             >
                               <Image
+                                width={64}
+                                height={64}
                                 className="h-8 w-8 rounded-1"
                                 src={color.iconUrl}
                                 alt={color.name}
