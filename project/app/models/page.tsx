@@ -44,6 +44,9 @@ const PageComponent = () => {
     console.log(cart);
   };
   const { scene } = useGLTF("/walletFinal.glb");
+  React.useEffect(() => {
+    scene.rotation.y -= Math.PI / 5;
+  }, [scene]);
   return (
     <Layout className="py-20 lg:py-32">
       <LayoutRow>
@@ -51,6 +54,12 @@ const PageComponent = () => {
           <Canvas
             className="mb-8 h-[50vh] max-h-[50vh]"
             camera={{ position: [0, 1, 3], fov: 45 }}
+            gl={{
+              preserveDrawingBuffer: true,
+              antialias: true,
+              powerPreference: "high-performance",
+              alpha: true,
+            }}
           >
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, 5]} intensity={1.2} />
