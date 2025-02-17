@@ -49,7 +49,7 @@ const PageComponent = () => {
       <LayoutRow>
         <LayoutColumn lgSpan={6}>
           <Canvas
-            className="h-[50vh] max-h-[50vh]"
+            className="mb-8 h-[50vh] max-h-[50vh]"
             camera={{ position: [0, 1, 3], fov: 45 }}
           >
             <ambientLight intensity={0.5} />
@@ -59,6 +59,7 @@ const PageComponent = () => {
             </Suspense>
             <OrbitControls />
           </Canvas>
+          <p className="mb-4 text-md">Price: 390 EUR</p>
           <div className="mb-8 flex flex-col gap-4 md:flex-row">
             <Counter value={quantity} setValue={setQuantity} />
             <Button

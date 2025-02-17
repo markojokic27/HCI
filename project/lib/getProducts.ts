@@ -150,8 +150,8 @@ const getProducts = () => {
       category: "Custom",
       description:
         "Handstitched Bifold Wallet made of High Quality Full Grain Italian Vegetable Tanned Leather. Designed for Practicality and Durability.",
-      price: 50,
-      image: "wallet1",
+      price: 390,
+      image: "wallet1.png",
     },
   ];
 };

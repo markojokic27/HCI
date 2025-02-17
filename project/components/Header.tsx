@@ -61,11 +61,11 @@ export const Header = () => {
         <ul className="flex items-center gap-8 justify-self-end">
           <li className="hidden items-center md:flex">
             <Button className="focus:outline-none">
-              <Icon name="search" />
+              <Icon name="user" className="scale-125" />
             </Button>
           </li>
           <li>
-            <Link href="/pages/cart" className="relative focus:outline-none">
+            <Link href="/cart" className="relative focus:outline-none">
               <Icon name="bag" className="scale-125" />
               <div className="absolute left-1.5 top-1.5 min-h-3 min-w-3 text-center text-2xs">
                 {cartNum > 0 && cartNum}

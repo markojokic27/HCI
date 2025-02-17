@@ -30,15 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <CartProvider>
-        <body
-          className={`${inter.variable} ${libreBodoni.variable} antialiased`}
-        >
+      <body className={`${inter.variable} ${libreBodoni.variable} antialiased`}>
+        <CartProvider>
           <Header />
           {children}
           <Footer />
-        </body>
-      </CartProvider>
+        </CartProvider>
+      </body>
     </html>
   );
 }

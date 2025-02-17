@@ -17,7 +17,7 @@ import { Icon } from "@/components/Icon";
 export const Counter: React.FC<
   NumberFieldProps & {
     variant?: "default" | "small";
-    setValue: (value: number) => void;
+    setValue?: (value: number) => void;
   }
 > = ({ className, variant, value, setValue, ...rest }) => {
   return (

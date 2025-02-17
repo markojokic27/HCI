@@ -8,7 +8,6 @@ import { Layout, LayoutColumn, LayoutRow } from "@/components/Layout";
 
 export default function ProductsPage() {
   const products = getProducts();
-
   const shuffledProducts = products
     .filter((product) => product.category !== "Custom")
     .sort(() => Math.random() - 0.5);
