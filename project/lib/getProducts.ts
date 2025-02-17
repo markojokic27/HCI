@@ -144,6 +144,15 @@ const getProducts = () => {
       price: 50,
       image: "keychain2.png",
     },
+    {
+      id: 999,
+      name: "Custom Handmade Leather wallet",
+      category: "Custom",
+      description:
+        "Handstitched Bifold Wallet made of High Quality Full Grain Italian Vegetable Tanned Leather. Designed for Practicality and Durability.",
+      price: 50,
+      image: "wallet1",
+    },
   ];
 };
 

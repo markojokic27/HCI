@@ -9,7 +9,9 @@ import { Layout, LayoutColumn, LayoutRow } from "@/components/Layout";
 export default function ProductsPage() {
   const products = getProducts();
 
-  const shuffledProducts = products.sort(() => Math.random() - 0.5);
+  const shuffledProducts = products
+    .filter((product) => product.category !== "Custom")
+    .sort(() => Math.random() - 0.5);
   return (
     <Layout className="mt-28 min-h-screen md:mt-36">
       <LayoutRow>

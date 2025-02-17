@@ -8,8 +8,11 @@ import { Layout, LayoutRow, LayoutColumn } from "@/components/Layout";
 import { Accordion } from "radix-ui";
 import { Icon } from "@/components/Icon";
 import Image from "next/image";
+import { Counter } from "@/components/Counter";
 import dynamic from "next/dynamic";
-// ✅ Disable SSR for this component
+import { Button } from "@/components/Button";
+import { useCart } from "@/app/cart-provider";
+
 const CustomItemPage = dynamic(() => Promise.resolve(PageComponent), {
   ssr: false,
 });
@@ -23,13 +26,32 @@ const Model = ({ scene }: ModelProps) => {
 };
 
 const PageComponent = () => {
-  const { scene } = useGLTF("/walletFinal.glb"); // ✅ Ensure this is inside `public/`
-
+  const { cart, setCart } = useCart();
+  const [quantity, setQuantity] = React.useState<number>(1);
+  const addItemToCart = (id: number, quantity: number) => {
+    const existingItem = cart.find((item) => item.id === id);
+    if (existingItem) {
+      const updatedCart = cart.map((item) => {
+        if (item.id === id) {
+          return { ...item, quantity: item.quantity + quantity };
+        }
+        return item;
+      });
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { id: id, quantity: quantity }]);
+    }
+    console.log(cart);
+  };
+  const { scene } = useGLTF("/walletFinal.glb");
   return (
     <Layout className="py-20 lg:py-32">
       <LayoutRow>
-        <LayoutColumn className="h-[50vh]" lgSpan={6}>
-          <Canvas camera={{ position: [0, 1, 3], fov: 45 }}>
+        <LayoutColumn lgSpan={6}>
+          <Canvas
+            className="h-[50vh] max-h-[50vh]"
+            camera={{ position: [0, 1, 3], fov: 45 }}
+          >
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, 5]} intensity={1.2} />
             <Suspense fallback={null}>
@@ -37,6 +59,17 @@ const PageComponent = () => {
             </Suspense>
             <OrbitControls />
           </Canvas>
+          <div className="mb-8 flex flex-col gap-4 md:flex-row">
+            <Counter value={quantity} setValue={setQuantity} />
+            <Button
+              className="w-full"
+              onPress={() => {
+                addItemToCart(999, quantity);
+              }}
+            >
+              Add to cart
+            </Button>
+          </div>
         </LayoutColumn>
         <LayoutColumn lgSpan={6}>
           <Accordion.Root

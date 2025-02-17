@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 // Components
 import { Icon } from "@/components/Icon";
 import { Drawer } from "@/components/Drawer";
+import { useCart } from "@/app/cart-provider";
 
 // Assets
 import Logo from "@/public/images/logo.png";
@@ -17,6 +18,8 @@ import Logo from "@/public/images/logo.png";
 export const Header = () => {
   const headerRef = React.useRef<HTMLDivElement | null>(null);
   const pathName = usePathname();
+  const { cart } = useCart();
+  const cartNum = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   const navLinks = [
     { label: "Home", href: "/" },
@@ -63,8 +66,10 @@ export const Header = () => {
           </li>
           <li>
             <Link href="/pages/cart" className="relative focus:outline-none">
-              <Icon name="bag" />
-              <div className="absolute left-2.5 top-1 text-2xs">1</div>
+              <Icon name="bag" className="scale-125" />
+              <div className="absolute left-1.5 top-1.5 min-h-3 min-w-3 text-center text-2xs">
+                {cartNum > 0 && cartNum}
+              </div>
             </Link>
           </li>
           <li className="flex h-6 w-6 items-center md:hidden">
