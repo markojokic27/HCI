@@ -18,7 +18,7 @@ const Model = ({ scene }: ModelProps) => {
 };
 
 const CustomItemPage = () => {
-  const { scene } = useGLTF("/model/wallet_final.glb");
+  const { scene } = useGLTF("/model/walletFinal.glb");
   React.useEffect(() => {
     scene.rotation.y -= Math.PI / 5;
   }, [scene]);
