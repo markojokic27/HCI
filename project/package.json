@@ -18,7 +18,7 @@
     "react": "^18",
     "react-aria-components": "^1.4.1",
     "react-dom": "^18",
-    "swiper": "^11.2.1",
+    "swiper": "^11.2.10",
     "tailwind-merge": "^2.5.4",
     "three": "^0.173.0",
     "three-gltf-loader": "^1.111.0"
