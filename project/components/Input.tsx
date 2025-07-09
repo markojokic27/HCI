@@ -69,7 +69,7 @@ export const Input: React.FC<
       </div>
 
       {validationError && (
-        <FieldError className="absolute hidden text-2xs text-red-500 group-data-[invalid=true]:block">
+        <FieldError className="absolute hidden text-xs text-red-500 group-data-[invalid=true]:block">
           {validationError}
         </FieldError>
       )}

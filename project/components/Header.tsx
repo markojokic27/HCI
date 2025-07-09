@@ -2,7 +2,6 @@
 
 // External packages
 import * as React from "react";
-import { Button } from "react-aria-components";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { Drawer } from "@/components/Drawer";
 import { useCart } from "@/app/cart-provider";
+import { Dialog } from "@/components/Dialog";
 
 // Assets
 import Logo from "@/public/images/logo.png";
@@ -26,6 +26,8 @@ export const Header = () => {
     { label: "Products", href: "/products" },
     { label: "Models", href: "/models" },
   ];
+
+  const [open, setOpen] = React.useState(false);
 
   return (
     <div
@@ -51,7 +53,7 @@ export const Header = () => {
               key={href}
               href={href}
               className={`self-center focus:outline-none ${
-                pathName === href ? "text-orange-800" : ""
+                pathName === href ? "text-orange-800 font-black" : ""
               }`}
             >
               {label}
@@ -59,10 +61,8 @@ export const Header = () => {
           ))}
         </div>
         <ul className="flex items-center gap-8 justify-self-end">
-          <li className="hidden items-center md:flex">
-            <Button className="focus:outline-none">
-              <Icon name="user" className="scale-125" />
-            </Button>
+          <li className="Fitems-center">
+            <Dialog open={open} setOpen={setOpen} />
           </li>
           <li>
             <Link href="/cart" className="relative focus:outline-none">

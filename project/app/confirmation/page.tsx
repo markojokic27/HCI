@@ -8,7 +8,7 @@ export default function Page() {
       <Layout className="mb-52 mt-44">
         <LayoutRow>
           <LayoutColumn span={12} lgOffset={3} lgSpan={6}>
-            <h1 className="mb-16 text-xl font-black text-orange-800 lg:text-4xl">
+            <h1 className="mb-16 text-2xl font-black text-orange-800 lg:text-4xl md:mb-20 md:text-4xl">
               Thank you for your order!
             </h1>
             <p className="mb-6 text-md">
