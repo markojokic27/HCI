@@ -19,7 +19,7 @@ export default function Page() {
     const product = products.find((p) => p.id === item.id);
     return acc + product!.price * item.quantity;
   }, 0);
-
+  console.log("Cart:", cart);
   return (
     <>
       <Layout className="mb-26 mt-26 md:mb-36 md:mt-40">
@@ -78,9 +78,9 @@ export default function Page() {
                 Apply
               </Button>
             </div>
-            <Link href={"/"} className="block w-full text-center">
-              <Button className="block w-full text-center">
-                Proceed to checkout
+            <Link href={cart.length===0 ? "/cart" : "/confirmation"} className="block w-full text-center">
+              <Button isDisabled={cart.length === 0}  className="block w-full text-center">
+                Buy
               </Button>
             </Link>
           </LayoutColumn>
